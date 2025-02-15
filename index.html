@@ -15,8 +15,8 @@
         min-width: 480px;
         margin: 0 auto;
       }
-      .lastResult {
-        color: white;
+      .lastResult{
+        color: rgb(0, 0, 0);
         padding: 3px;
       }
     </style>
@@ -41,12 +41,12 @@
 </body>
 
 <script>
-  let randomNumber = Math.random() * 10;
-
-  const ATTEMPS = 5;
+  let randomNumber = Math.floor(Math.random() * 100) + 1;
+  console.log(randomNumber) //MUESTRA EN CONSOLA EL NUMERO ALEATORIO
+  const ATTEMPS = 10;
   const guesses = document.querySelector('.guesses');
   const lastResult = document.querySelector('.lastResult');
-  const lowOrHi = document.querySelector('lowOrHi');
+  const lowOrHi = document.querySelector('.lowOrHi');
   const guessSubmit = document.querySelector('.guessSubmit');
   const guessField = document.querySelector('.guessField');
 
@@ -57,22 +57,23 @@
 
     let userGuess = guessField.value;
     if(guessCount === 1) {
-      guesses.textContent = 'Número aleatorio anterior: ';
+      guesses.textContent = 'Número ingresado anterior: ';
+      guessCount ++;
     }
     guesses.textContent += userGuess + ' ';
 
-    if(userGuess === randomNumber) {
-      lastResult.textContent = '!!!Pérdistes!!!';
-      lastResult.style.backgroundColor = 'black';
+    if(userGuess == randomNumber) {
+      lastResult.textContent = 'Felicitaciones! adivinaste el número!!';
+      lastResult.style.backgroundColor = 'green';
       lowOrHi.textContent = '';
-      setGameOver();
+      //setGameOver();
     } else if(guessCount === ATTEMPS) {
-      lastResult.textContent = 'Felicitaciones! adivinaste el número!';
+      lastResult.textContent = 'Perdiste';
       lastResult.style.backgroundColor = 'red';
-      setGameOver();
+      //setGameOver();
     } else {
       lastResult.textContent = 'Incorrecto! ';
-      lastResult.style.backgroundColor = 'green';
+      lastResult.style.backgroundColor = 'orange';
       if(userGuess < randomNumber) {
         lowOrHi.textContent = 'El número es mayor!';
       } else if(userGuess > randomNumber) {
@@ -84,7 +85,7 @@
     guessField.value = '';
     guessField.focus();
   }
-  guessSubmit.addeventListener('click', checkGuess);
+  guessSubmit.addEventListener('click', checkGuess);
 
   function setGameOver() {
 	  guessField.disabled = true;
