@@ -43,22 +43,35 @@ Se agregó la funcion Math.floor y Math.random * 100
 
 # REQUISITOS SOLICITADOS
 - Creación de funcion test para poder evitar ingreso de valores erroneos  
-Dentro de la funcion checkGuess se ha colocado en la segunda linea la funcion test el cual envía el valor ingresado por el usuario para poder verificar las condiciones solicitadas antes de poder continuar
+Dentro de la funcion checkGuess se ha colocado en la segunda linea la funcion test el cual envía el valor ingresado por el usuario para poder verificar las condiciones solicitadas antes de poder continuar  
+
 - Creación de variable status la cual servirá para evitar que la funcion checkGuess siga corriendo en caso de falla  
 En la funcion test() se encuentran las condicionales y en caso de alguna detecte algun fallo, utiliza la variable status para poder finalizar o impedir que el programa siga corriendo luego de la falla  
+
 - En cada comprobación se adjunta la variable status para poder cambiar su estado a true en caso estos fallos se cumplan  
+
 - Primera comprobación que el numero ingresado se encuentre en el rango de 1 a 100  
+
 - Segunda comprobación que el numero ingresado no tenga decimales  
+
 - El campo que indica al jugador si el numero es mayor o menor se ha colocado con fondo negro  
+
 - Cuando el jugador pierde luego de 10 intentos, mostrará el mensaje "!!!Pérdistes!!!"  
+
 - El usuario al ganar la partida, se mostrará el mensaje con fondo de color verde "Felicitaciones! adivinaste el número!"  
+
 
 # SUGERENCIAS PARA MEJORA DE PROYECTO
 - Se centró toda la información y campos para tener un orden  
 En css se agregaron valores para poder centrar cada componente  
-- Se agregó el numero que el usuario ingresa al texto que indica si es mayor o menor al numero a adivinar
+
+- Se agregó el numero que el usuario ingresa al texto que indica si es mayor o menor al numero a adivinar  
+
 - Se agregó un nuevo apartado para que el usuario conozca cuantos intentos ha utilizado  
-Se creó la etiqueta p con clase trys para poder utilizarla como indicador de intentos
-- Se eliminaron todas las salidas de consola para que no se de ninguna información del numero aleatorio generado
-- El campo hiOrLow se ha utilizado al momento de perder, ya que ahora se indicará al usuario cual era el numero aleatorio que no ha adivinado
+Se creó la etiqueta p con clase trys para poder utilizarla como indicador de intentos  
+
+- Se eliminaron todas las salidas de consola para que no se de ninguna información del numero aleatorio generado  
+
+- El campo hiOrLow se ha utilizado al momento de perder, ya que ahora se indicará al usuario cual era el numero aleatorio que no ha adivinado  
+
 - Se ha colocado el historial de los numeros que se han ingresado para que el usuario sepa cuales no debe de volver a ingresar, sin emargo, puede volver a ingresarlos si así desea
