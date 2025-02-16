@@ -16,7 +16,7 @@
         margin: 0 auto;
       }
       .lastResult{
-        color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
         padding: 3px;
       }
     </style>
@@ -52,10 +52,19 @@
 
   let guessCount = 1;
   let resetButton;
+  let status = false;
 
   function checkGuess() {
 
     let userGuess = guessField.value;
+
+    test(userGuess);
+
+    if(status == true){
+      status = false;
+      return;
+    }
+
     if(guessCount === 1) {
       guesses.textContent = 'Números ingresados anteriormente: ';
     }
@@ -67,16 +76,16 @@
       lowOrHi.textContent = '';
       setGameOver();
     } else if(guessCount === ATTEMPS) {
-      lastResult.textContent = 'Perdiste';
+      lastResult.textContent = '!!!Pérdistes!!!';
       lastResult.style.backgroundColor = 'red';
       setGameOver();
     } else {
       lastResult.textContent = 'Incorrecto! ';
-      lastResult.style.backgroundColor = 'orange';
+      lastResult.style.backgroundColor = 'black';
       if(userGuess < randomNumber) {
-        lowOrHi.textContent = 'El número es mayor!';
-      } else if(userGuess > randomNumber) {
         lowOrHi.textContent = 'El número es menor!';
+      } else if(userGuess > randomNumber) {
+        lowOrHi.textContent = 'El número es mayor!';
       }
     }
 
@@ -114,6 +123,16 @@
 
     randomNumber = Math.floor(Math.random() * 100) + 1;
     console.log(randomNumber);
+  }
+
+  function test(num){
+    if(num <= 0 || num > 100){
+      alert("¡ERROR! El valor debe de ser entre 1 y 100");
+      status = true;
+    } else if (num % 1 != 0){
+      alert("¡ERROR! El valor debe de ser entero");
+      status = true;
+    }
   }
 </script>
 </html>

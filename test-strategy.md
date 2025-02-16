@@ -1,9 +1,5 @@
 # DOCUMENTO DE INFORMACIÓN DE FALLOS
 
-### Estilos css
-- La casilla lastResult no se ve
-En los estilos de css el color de texto era blanco, se cambió a negro para poder ser visible
-
 ### Ingreso de datos de INPUT
 - Tipo de input como text
 Para evitar que se ingrese otro valor que no sea numerico se cambio el tipo del input a number
@@ -28,7 +24,7 @@ guesses.textContent = 'Números ingresados anteriormente: ';
 - En la condición if(userGuess === randomNumber) no detecta si el usuario ingresa un valor
 Se modifica el operador a == para que pueda comparar el valor ingresado y no estrictamente
 Se cambia el color de fondo a verde, ya que en esta condicion es cuando el jugador gana
-Se cambió el texto resultado a Felicidades!
+Se cambió el texto resultado a Felicitaciones! adivinaste el número!
 
 - Ultimo else
 Se cambia el color a anaranjado para lograr visualizar texto
@@ -46,3 +42,13 @@ Se creó un aviso en consola para indicar la cantidad de intentos utilizados
 - Funcion ResetGame
 Se colocó un aviso para que se pueda mostrar en consola el nuevo numero aleatorio
 Se modificó la funcion random, ya que unicamente estaba dando como resultado random el numero 1
+
+# REQUISITOS SOLICITADOS
+- Creación de funcion test para poder evitar ingreso de valores erroneos
+Creación de variable status la cual servirá para evitar que la funcion checkGuess siga corriendo en caso de falla
+En cada comprobación se adjunta la variable status para poder cambiar su estado a true en caso estos fallos se cumplan
+Primera comprobación que el numero ingresado se encuentre en el rango de 1 a 100
+Segunda comprobación que el numero ingresado no tenga decimales
+El campo que indica al jugador si el numero es mayor o menor se ha colocado con fondo negro
+Cuando el jugador pierde luego de 10 intentos, mostrará el mensaje "!!!Pérdistes!!!"
+El usuario al ganar la partida, se mostrará el mensaje con fondo de color verde "Felicitaciones! adivinaste el número!"
