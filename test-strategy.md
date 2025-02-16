@@ -4,7 +4,7 @@
 - La casilla lastResult no se ve
 En los estilos de css el color de texto era blanco, se cambió a negro para poder ser visible
 
-### Ingreso de datos de INPUT ln.31
+### Ingreso de datos de INPUT
 - Tipo de input como text
 Para evitar que se ingrese otro valor que no sea numerico se cambio el tipo del input a number
 
@@ -23,15 +23,26 @@ Se agregó la funcion Math.floor para poder recibir un numero del 1 al 100 y que
 
 - Condición if(guessCount === 1) modificada
 Se cambio el campo para que indique todos los numeros que el usuario ha ingresado.
+guesses.textContent = 'Números ingresados anteriormente: ';
 
 - En la condición if(userGuess === randomNumber) no detecta si el usuario ingresa un valor
 Se modifica el operador a == para que pueda comparar el valor ingresado y no estrictamente
-Se cambia el color de fondo a verde, ya que en esta condicion es cuando el jugador gana.
+Se cambia el color de fondo a verde, ya que en esta condicion es cuando el jugador gana
 Se cambió el texto resultado a Felicidades!
 
-- Ultimo else ln. 74
-Se cambia el color a anaranjado
+- Ultimo else
+Se cambia el color a anaranjado para lograr visualizar texto
 
 - No captura etiqueta lowOrHi
 la constante const lowOrHi = document.querySelector('lowOrHi'); le hace falta el punto en el selector para poder ubicar la etiqueta.
 Se coloca el punto
+
+- La funcion setGameOver no funciona
+Se detectó que hacía falta la E mayuscula en addEventListener
+
+- Aviso de intentos
+Se creó un aviso en consola para indicar la cantidad de intentos utilizados
+
+- Funcion ResetGame
+Se colocó un aviso para que se pueda mostrar en consola el nuevo numero aleatorio
+Se modificó la funcion random, ya que unicamente estaba dando como resultado random el numero 1
